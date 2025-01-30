@@ -1,14 +1,13 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n=nums.size()+1;
+        int n=nums.size();
         unordered_set s1(nums.begin(),nums.end());
-        int found;
-            while(n--){
-            if(s1.find(n)==s1.end()){
-                found= n;
+            for(int i=0;i<=n;i++){
+            if(s1.find(i)==s1.end()){
+                return i;
             }
             }
-        return found;
+        return -1;
     }
 };
