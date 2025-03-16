@@ -22,8 +22,7 @@ public:
             }
         }
         int sum=0;
-        int n=st.size();
-        for(int i=0;i<n;i++){
+        while(!st.empty()){
             sum=sum+st.top();
             st.pop();
         }
