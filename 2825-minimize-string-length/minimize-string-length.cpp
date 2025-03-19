@@ -1,8 +1,12 @@
 class Solution {
 public:
     int minimizedStringLength(string s) {
-        unordered_set<char>uset(s.begin(),s.end());
+        unordered_map<char,int>umap;
 
-        return uset.size();
+        for(int c:s){
+            umap[c]++;
+        }
+        return umap.size();
+        
     }
 };
