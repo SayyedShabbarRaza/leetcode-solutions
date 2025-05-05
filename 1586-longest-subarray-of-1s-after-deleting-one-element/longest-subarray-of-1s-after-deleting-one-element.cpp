@@ -5,13 +5,10 @@ public:
         int isZero=0;
         int n=nums.size();
         int length=0;
-        int currentCount=0;
 
         while(r<n){
             if(nums[r]==0){
                 isZero++;
-            }else{
-                currentCount++;
             }
             
             while(isZero>1){
