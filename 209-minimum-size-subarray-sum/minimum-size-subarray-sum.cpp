@@ -1,23 +1,47 @@
 class Solution {
-    //14 min came up with brute force idea but and found the actuall issue resisting effecient solution.
 public:
     int minSubArrayLen(int target, vector<int>& nums) {
-        int n=nums.size();
-        int r=0,l=0;
+        int n=nums.size(),i=0,j=0,cumSum=0;
         int length=INT_MAX;
-       int currentSum=0;
-        while(r<n){
-            currentSum+=nums[r];
-            while(currentSum>=target){
-            length=min(length,r-l+1);
-                currentSum-=nums[l];
-                l++;
+
+        while(j<n){
+            cumSum+=nums[j];
+
+            while(cumSum>=target){
+            length=min(length,j-i+1);
+            cumSum-=nums[i];
+            i++;
             }
-            r++;
+
+            
+            j++;
+
         }
+
         return length==INT_MAX?0:length;
     }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -41,3 +65,4 @@ public:
 //         return length==INT_MAX?0:length;
 //     }
 // };
+    //14 min came up with correct solution but make mistake in dry run leads to think for brute force brute force idea but and found the actuall issue resisting effecient solution.
